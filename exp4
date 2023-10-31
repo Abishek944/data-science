@@ -1,0 +1,89 @@
+Aim:
+Reading data from text files, excel and the web and exploring various commands for
+doing descriptive analytics on the Iris data set.
+What is Exploratory Data Analysis?
+Exploratory Data Analysis (EDA) is a technique to analyze data using some visual
+Techniques. With this technique, we can get detailed information about the statistical summary
+of the data. We will also be able to deal with the duplicates values, outliers, and also see some
+trends or patterns present in the dataset.
+Now let’s see a brief about the Iris dataset.
+Iris Dataset
+If you are from a data science background you all must be familiar with the Iris Dataset. If you
+are not then don’t worry we will discuss this here.
+Iris Dataset is considered as the Hello World for data science. It contains five columns namely
+– Petal Length, Petal Width, Sepal Length, Sepal Width, and Species Type. Iris is a flowering
+plant, the researchers have measured various features of the different iris flowers and recorded
+them digitally.
+4A). Aim:
+
+Reading data from Text file and exploring various commands for doing
+
+descriptive analytics on the Iris data set.
+Seaborn Package:
+Seaborn has many of its own high-level plotting routines, but it can also overwrite
+Matplotlib&#39;s default parameters and in turn get even simple Matplotlib scripts to produce vastly
+superior output. We can set the style by calling Seaborn&#39;s set() method. By convention, Seaborn
+is imported as sns:
+Seaborn package is installed by typing the following command in the command prompt
+
+pip install seaborn
+
+Step 2:
+After the successful insertion of seaborn package launch into jupyter using jupyter
+notebook command. Type the following program. Give the correct path name for iris dataset.
+The Iris dataset, which lists measurements of petals and sepals of three iris species.
+Step 1:
+Import Packages
+In[1]:
+import numpy as np
+import pandas as pd # package for working with data frames in python
+import seaborn as sns # package for visualization (more on seaborn later)
+import matplotlib.pyplot as plt
+%matplotlib inline
+Step 2:
+Import iris dataset
+In[2]:
+iris = sns.load_dataset(&#39;iris&#39;)
+my_data_frame = pd.DataFrame(iris)
+my_data_frame.head()
+
+OUTPUT
+
+Step 3: Simple plot
+In[3]:
+p=plt.hist(my_data_frame.sepal_length)
+
+OUTPUT
+
+Step: 4 Plot using Seaborn
+In[4]:
+g = sns.pairplot(my_data_frame)
+OUTPUT
+
+Step 5: Colour plot
+In[5]:
+
+sns.set(style=&quot;ticks&quot;, color_codes=True) # change style g
+= sns.pairplot(iris, hue=&quot;species&quot;)
+
+OUTPUT:
+
+In [6]:
+g = sns.pairplot(iris, height=3, vars=[&quot;sepal_width&quot;, &quot;sepal_length&quot;], \
+
+markers=[&quot;o&quot;, &quot;s&quot;, &quot;D&quot;], hue=&quot;species&quot;)
+
+OUTPUT
+
+In [7]:
+
+g = sns.pairplot(iris, kind=&quot;reg&quot;, hue=&quot;species&quot;)
+OUTPUT
+
+In[8]:
+sns.set(style=&quot;ticks&quot;, color_codes=True) # change
+style g = sns.pairplot(iris, hue=&quot;species&quot;)
+
+Result:
+Thus reading data from Text file and exploring various commands for doing descriptive
+analytics on the Iris data set is executed.
